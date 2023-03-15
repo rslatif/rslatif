@@ -1,0 +1,400 @@
+##// Problem given in lab class
+// 1. Print an array in reverse order
+#include <iostream>
+using namespace std;
+
+int main() {
+    int len;
+    cout << "Enter the length of the array: ";
+    cin >> len;
+
+    int arr[len];
+    cout << "Write all the integers of the array separeted by space: ";
+    for (int i = 0; i < len; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "Reversed array is: ";
+    for (int i = len-1; i >= 0; i--) {
+        if (i != 0) {
+            cout << arr[i] << " ";
+        }
+        else {
+            cout << arr[i] << endl;
+        }
+    }
+
+    return 0;
+}
+
+// 2. Search an element in the array
+#include <iostream>
+using namespace std;
+
+int main() {
+    int len;
+    cout << "Enter the length of the array: ";
+    cin >> len;
+
+    int arr[len];
+    cout << "Write all the integers of the array separeted by space: ";
+    for (int i = 0; i < len; i++) {
+        cin >> arr[i];
+    }
+
+    int val;
+    cout << "Enter the value you want to find in this array: ";
+    cin >> val;
+
+    for (int i = 0; i < len; i++) {
+        if (arr[i] == val) {
+            cout << "The index of the value " << val << " is: " << i << endl;
+            break;
+        }
+    }
+    
+    return 0;
+}
+
+// 3. Number of vowels in the character array
+#include <iostream>
+using namespace std;
+
+int main() {
+    int len;
+    cout << "Enter the length of the array: ";
+    cin >> len;
+
+    char arr[len];
+    cout << "Write all the characters of the array: ";
+    for (int i = 0; i < len; i++) {
+        cin >> arr[i];
+    }
+
+    int count = 0;
+    for (int i = 0; i < len; i++) {
+        if (arr[i] == 'A' || arr[i] == 'E' || arr[i] == 'I' || arr[i] == 'O' || arr[i] == 'U' || arr[i] == 'a' || arr[i] == 'e' || arr[i] == 'i' || arr[i] == 'o' || arr[i] == 'u') {
+            count ++;
+        }
+    }
+    cout << "The number of vowels in this array is: " << count << endl;
+    
+    return 0;
+}
+
+// 4. Print a 2D array
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N[10][2];
+    for (int i = 0; i < 10; i++) {
+        cout << "Enter two value of row number " << i+1 << ": ";
+        cin >> N[i][0] >> N[i][1];
+    }
+
+    for (int i = 0; i < 10; i++) {
+        cout << "N[" << i << "][0] = " << N[i][0] << ", N[" << i << "][1] = " << N[i][1] << endl;
+    }
+
+    return 0;
+}
+
+// 5. Multiplication between two number of each row in 2D array
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N[10][2];
+    for (int i = 0; i < 10; i++) {
+        cout << "Enter two value of row number " << i+1 << ": ";
+        cin >> N[i][0] >> N[i][1];
+    }
+
+    for (int i = 0; i < 10; i++) {
+        cout << N[i][0] << " X " << N[i][1] << " = " << N[i][0] * N[i][1] << endl;
+    }
+
+    return 0;
+}
+
+// 6. Sum of an array of n integer
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the length of the array: ";
+    cin >> n;
+    
+    int arr[n];
+    cout << "Enter all values of the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+
+    cout << "The sum of all integers of the array is: " << sum << endl;
+
+    return 0;
+}
+
+// 7. Maximum and Minimum of an array of n integer
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the length of the array: ";
+    cin >> n;
+    
+    int arr[n];
+    cout << "Enter all values of the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int max = arr[0], min = arr[0];
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    cout << "Minimum value of the array is: " << min << endl;
+    cout << "Maximum value of the array is: " << max << endl;
+
+    return 0;
+}
+
+// Assignment on loop (Sheet)
+// 1. Find the sum and average of an array
+#include <iostream>
+using namespace std;
+
+int main() {
+    int sum = 0;
+    cout << "Enter all integers of the array: ";
+    for (int i = 0; i < 10; i++) {
+        sum += i;
+    }
+
+    cout << "The sum of all integer of the array is: " << sum << endl;
+    cout << "The average of all integer of the array is: " << sum / 10 << endl;
+
+    return 0;
+}
+
+// 2. Cube of the number up to given integer
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        cout << "The cube of " << i << " is: " << i*i*i << endl;
+    }
+    return 0;
+}
+
+// 3. Sum of odd and even numbers in a range
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, odd_sum = 0, even_sum = 0;
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    for (int i = 0; i <= n; i++) {
+        if (i % 2 == 0) {
+            even_sum += i;
+        }
+        else {
+            odd_sum += i;
+        }
+    }
+
+    cout << "The sum of odd numbers in range of " << n << " is: " << odd_sum << endl;
+    cout << "The sum of even numbers in range of " << n << " is: " << even_sum << endl;
+
+    return 0;
+}
+
+// 4. Print a asterisk triangle
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of rows of asterisk triangle: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= i; j++) {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
+
+// 5. Print a number triangle
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of rows of number triangle: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 1; j <= i+1; j++) {
+            cout << j;
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
+
+// 6. Print a number triangle 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of rows of number triangle: ";
+    cin >> n;
+
+    for (int i = 1; i < n+1; i++) {
+        for (int j = 1; j <= i; j++) {
+            cout << i;
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
+
+// 7. Print a asterisk pyramid
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, x = 1;
+    cout << "Enter the number of rows of asterisk pyramid: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n - i; j++) {
+            cout << " ";
+        }
+        for (int k = 1; k <= x; k++) {
+            if (k % 2 == 0) {
+                cout << " ";
+            }
+            else {
+                cout << "*";
+            }
+        }
+        x += 2;
+        for (int l = 1; l <= n - i; l++) {
+            cout << " ";
+        }
+        cout << "\n";
+    }
+    return 0;    
+}
+
+// 8. Factorial of a number
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, factorial = 1;
+    cout << "Enter a number to count the factorial of a number: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+    cout << "The factorial of " << n << " is: " << factorial;
+}
+
+// 9. Prime number or not
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, count = 0;
+    cout << "Enter a number to check if it is prime or not: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            count++;
+        }
+    }
+
+    if (count == 2) {
+        cout << n << " is a prime number.";
+    }
+    else {
+        cout << n << " is not a prime number.";
+    }
+    return 0;
+}
+
+// 10. Print a number triangle 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, x = 1;
+    cout << "Enter the number of rows of a number triangle: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++, x++) {
+            if (j == i) {
+                cout << x;
+            }
+            else {
+                cout << x << " ";
+            }
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
+
+// 11. Print a reverse triangle
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of rows of reverse triangle: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = n; j > i; j--) {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
